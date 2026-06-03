@@ -1,0 +1,60 @@
+.web-layout {
+    display: flex;
+    height: 100vh;
+
+    sidebar-component {
+        flex: 1;
+    }
+
+    main {
+        height: 100vh;
+        flex: 5;
+        overflow-y: auto;
+    }
+
+    .mobile-topbar {
+        display: none;
+
+        .hamburger {
+            display: none;
+            padding: 0.5rem;
+            background: #0a0f1a;
+            border: 1px solid #232a3a;
+
+            @media (max-width: 768px) {
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        sidebar-component {
+            flex: none;
+        }
+
+        main {
+            flex: 1;
+            height: auto;
+            padding-top: 0;
+        }
+
+        .mobile-topbar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 0.5rem;
+            background: #0a0f1a;
+            border-bottom: 1px solid #232a3a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            span {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+    }
+}

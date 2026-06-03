@@ -1,0 +1,12 @@
+<div class="web-layout">
+  <div class="mobile-topbar">
+    <button class="hamburger" (click)="sidebar.toggleSidebar()">
+      <svg lucidePanelLeftOpen></svg>
+    </button>
+  </div>
+
+  <sidebar-component #sidebar></sidebar-component>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
