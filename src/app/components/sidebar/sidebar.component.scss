@@ -27,8 +27,9 @@
         .close-button {
             display: none;
             padding: 0.5rem;
-            background: #0a0f1a;
-            border: 1px solid #232a3a;
+            background: none;
+            border: none;
+            margin-left: auto;
 
             @media (max-width: 768px) {
                 display: flex;
@@ -36,9 +37,10 @@
         }
 
         .sidebar-logo {
-            width: 30px;
+            width: 3rem;
             height: auto;
             display: block;
+            cursor: pointer;
         }
 
         h1 {

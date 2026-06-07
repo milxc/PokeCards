@@ -1,0 +1,40 @@
+<div class="dropdown-wrap">
+    <div class="dropdown-trigger" [class.open]="isOpen" (click)="toggle()">
+        @if (selectedOption?.image) {
+            <img class="trigger-img" [src]="selectedOption!.image" [alt]="selectedOption!.name">
+        } @else {
+            <div class="trigger-placeholder"></div>
+        }
+        <label class="trigger-text" [class.has-value]="!!selectedOption">
+            {{ selectedOption?.name ?? placeholder }}
+        </label>
+    </div>
+
+    @if (isOpen) {
+        <div class="dropdown-panel">
+            <div class="search-wrap">
+                <input class="search-input" [(ngModel)]="searchQuery" placeholder="Search…" autofocus>
+            </div>
+            <div class="options-list">
+                @if (filtered.length === 0) {
+                    <div class="no-results">No results found</div>
+                }
+                @for (option of filtered; track option.id) {
+                    <div class="option" [class.selected]="selectedOption?.id === option.id" (click)="select(option)">
+                        @if (option.image) {
+                            <img class="option-img" [src]="option.image" [alt]="option.name">
+                        } @else {
+                            <div class="option-img-placeholder"></div>
+                        }
+                        <div class="option-info">
+                            <div class="option-name">{{ option.name }}</div>
+                        </div>
+                        @if (selectedOption?.id === option.id) {
+                            <i class="ti ti-check option-check"></i>
+                        }
+                    </div>  
+                }
+            </div>
+        </div>
+    }
+</div>

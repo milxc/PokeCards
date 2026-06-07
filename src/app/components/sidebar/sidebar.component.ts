@@ -4,8 +4,8 @@ import { Router, RouterLink } from "@angular/router";
 @Component({
     selector: 'sidebar-component',
     templateUrl: 'sidebar.component.html',
-    styleUrl: 'sidebar.component.scss',
-    imports: [RouterLink]
+    styleUrls: ['sidebar.component.scss'],
+    imports: [RouterLink, ]
 })
 
 export class SidebarComponent implements OnInit {
@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     }
 
     logout() {
-        // Simulate logout logic
+        //This will come later lol
         this.router.navigate(['/login']);
     }
 

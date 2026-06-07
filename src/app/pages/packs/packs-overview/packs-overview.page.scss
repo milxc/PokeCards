@@ -1,0 +1,97 @@
+.packs-overview-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h1 {
+        width: 100%;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    .action-bar {
+        width: 100%;
+        gap: 1rem;
+        display: flex;
+        justify-content: end;
+        margin-bottom: 1rem;
+
+        .input-wrapper {
+            width: 20rem;
+        }
+
+        search-img-dropdown {
+            width: 15rem;
+        }
+    }
+
+    .packs {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.25rem;
+
+        .pack {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: border-color 0.15s ease, transform 0.15s ease;
+
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.4);
+                transform: translateY(-2px);
+            }
+
+            .pack-img-wrapper {
+                padding: 1.25rem 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 80px;
+
+                img {
+                    width: 100%;
+                    max-height: 80px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    // Tablet
+    @media (max-width: 900px) {
+        .packs {
+            width: 100%;
+        }
+    }
+
+    // Mobile
+    @media (max-width: 600px) {
+        padding: 1rem;
+
+        .action-bar {
+            flex-direction: column;
+
+            .input-wrapper {
+                width: 100%;
+            }
+
+            search-img-dropdown {
+                width: 100%;
+            }
+        }
+
+        .packs {
+            width: 100%;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.75rem;
+        }
+    }
+}

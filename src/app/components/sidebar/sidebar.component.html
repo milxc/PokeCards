@@ -4,30 +4,35 @@
 
 <nav class="sidebar" [class.open]="isOpen">
     <div class="sidebar-header">
-        <button class="close-button" (click)="toggleSidebar()">
-            <svg lucideChevronRight></svg>
-        </button>
+
         <img src="../../assets/pokecards-logo-transparent.png" alt="PokeCards Logo" class="sidebar-logo" />
-        <h1>PokeCards</h1>
+
+        <button class="close-button" (click)="toggleSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-left-icon lucide-chevron-left">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+        </button>
     </div>
 
     <div class="side-bar-links">
         <ul class="nav-list top">
             <li>
-                <a routerLinkActive="active" [routerLink]="['/dashboard']" (click)="closeSidebar()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="7" height="9" x="3" y="3" rx="1" />
-                        <rect width="7" height="5" x="14" y="3" rx="1" />
-                        <rect width="7" height="9" x="14" y="12" rx="1" />
-                        <rect width="7" height="5" x="3" y="16" rx="1" />
+                <a routerLinkActive="active" [routerLink]="['/']" (click)="closeSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-log-in-icon lucide-log-in">
+                        <path d="m10 17 5-5-5-5" />
+                        <path d="M15 12H3" />
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
                     </svg>
                     Login
                 </a>
             </li>
             <li>
-                <a routerLink="/clients" routerLinkActive="active" (click)="closeSidebar()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                <a routerLink="/register" routerLinkActive="active" (click)="closeSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                         <path d="M16 3.128a4 4 0 0 1 0 7.744" />
@@ -37,7 +42,19 @@
                     Register
                 </a>
             </li>
+
+            <li>
+                <a routerLink="/packs" routerLinkActive="active" (click)="closeSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" color="white" width="16" height="16" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M11.19 2.25c-.26 0-.52.06-.77.15L3.06 5.45a1.994 1.994 0 0 0-1.09 2.6L6.93 20a2 2 0 0 0 1.81 1.25c.26 0 .53-.03.79-.15l7.37-3.05a2.02 2.02 0 0 0 1.23-1.8c.01-.25-.04-.54-.13-.8L13 3.5a1.95 1.95 0 0 0-1.81-1.25m3.48 0l3.45 8.35V4.25a2 2 0 0 0-2-2m4.01 1.54v9.03l2.43-5.86a1.99 1.99 0 0 0-1.09-2.6m-10.28-.14l4.98 12.02l-7.39 3.06L3.8 7.29" />
+                    </svg>
+                    Packs
+                </a>
+            </li>
         </ul>
+
+
 
         <ul class="nav-list bottom">
             <li>
